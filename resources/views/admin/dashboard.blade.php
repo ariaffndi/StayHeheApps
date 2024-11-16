@@ -13,10 +13,10 @@
                   <h1 class="text-3xl font-bold">Main Dashboard</h1>
                   <hr class="mt-4">
                </div>
-               <div class="mt-4 flex flex-wrap gap-4 items-center">
-                  <x-card-dashboard></x-card-dashboard>
-                  <x-card-dashboard></x-card-dashboard>
-                  <x-card-dashboard></x-card-dashboard>
+               <div class="mt-4 flex flex-wrap gap-4 items-center justify-center">
+                  <x-card-bookings>Bookings</x-card-bookings>
+                  <x-card-units>Users</x-card-units>
+                  <x-card-users>Units</x-card-users>
                </div>
          </header>
 
