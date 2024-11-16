@@ -10,8 +10,7 @@
          <li><a><i class="fa-solid fa-user"></i> Users</a></li>
       </div>
       <div>
-         <li><a href="" class="btn btn-neutral"><i class="fa-solid fa-right-from-bracket"></i>
-                  Logout</a></li>
+         <x-dropdown-profile></x-dropdown-profile>
       </div>
    </ul>
 </div>
