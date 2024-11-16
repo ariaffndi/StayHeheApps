@@ -1,4 +1,4 @@
-<?php
+?php
 
 namespace App\View\Components;
 
@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class card-dashboard extends Component
+class dropdown-profile extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class card-dashboard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.card-dashboard');
+        return view('components.dropdown-profile');
     }
 }
