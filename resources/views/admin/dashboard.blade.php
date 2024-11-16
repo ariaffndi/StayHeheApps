@@ -8,19 +8,15 @@
          </label>
 
          <!-- Page content here -->
-         <header>
-               <div>
-                  <h1 class="text-3xl font-bold">Main Dashboard</h1>
-                  <hr class="mt-4">
-               </div>
-               <div class="mt-4 flex flex-wrap gap-4 items-center justify-center">
-                  <x-card-bookings>Bookings</x-card-bookings>
-                  <x-card-units>Users</x-card-units>
-                  <x-card-users>Units</x-card-users>
-               </div>
-         </header>
-
-
+         <div>
+               <h1 class="text-3xl font-bold">Main Dashboard</h1>
+               <hr class="mt-4">
+         </div>
+         <div class="mt-4 flex flex-wrap gap-4 items-center justify-center">
+               <x-card-bookings><i class="fa-solid fa-building"></i> Bookings</x-card-bookings>
+               <x-card-units><i class="fa-solid fa-building"></i> Units</x-card-units>
+               <x-card-users><i class="fa-solid fa-user"></i> Users</x-card-users>
+         </div>
       </div>
 
    </div>
