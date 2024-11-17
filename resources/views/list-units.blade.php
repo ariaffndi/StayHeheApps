@@ -1,4 +1,5 @@
 <x-layout>
+      <x-modal-confirm-delete></x-modal-confirm-delete>
 <div class="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
       <x-sidebar></x-sidebar>
@@ -9,13 +10,11 @@
 
       <!-- Page content here -->
       <div>
-            <h1 class="text-3xl font-bold">Main Dashboard</h1>
+            <h1 class="text-3xl font-bold">Our Units</h1>
             <hr class="mt-4">
       </div>
       <div class="mt-4 flex flex-wrap gap-4 items-center justify-center">
-            <x-card-bookings><i class="fa-solid fa-building"></i> Bookings</x-card-bookings>
-            <x-card-units><i class="fa-solid fa-building"></i> Units</x-card-units>
-            <x-card-users><i class="fa-solid fa-user"></i> Users</x-card-users>
+            <x-table-units></x-table-units>
       </div>
       </div>
 
