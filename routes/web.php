@@ -7,6 +7,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+use App\Http\Controllers\UserController;
+ 
+Route::view('/welcome2', 'welcome2');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
