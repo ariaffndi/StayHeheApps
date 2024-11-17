@@ -4,12 +4,12 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
 use App\Http\Controllers\UserController;
  
-Route::view('/welcome2', 'welcome2');
+Route::view('/welcome', 'welcome');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
