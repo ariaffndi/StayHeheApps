@@ -4,12 +4,16 @@
       <!-- Sidebar content here -->
       <div>
          <li><a class="text-2xl font-bold">StayHehe Admin</a></li>
-         <li><a><i class="fa-solid fa-house"></i> Dashboard</a></li>
-         <li><a><i class="fa-solid fa-calendar-days"></i> Bookings</a></li>
-         <li><a><i class="fa-solid fa-building"></i> Units</a></li>
-         <li><a><i class="fa-solid fa-user"></i> Users</a></li>
+         <li><a href="dashboard" class="{{ request()->is('dashboard') ? 'nav-link active' : 'nav-link' }} text-xl"><i
+                     class="fa-solid fa-house "></i> Dashboard</a></li>
+         <li><a href="list-bookings" class="{{ request()->is('list-bookings') ? 'nav-link active' : 'nav-link' }}"><i
+                     class="fa-solid fa-calendar-days "></i> Bookings</a></li>
+         <li><a href="list-units" class="{{ request()->is('list-units') ? 'nav-link active' : 'nav-link' }}"><i
+                     class="fa-solid fa-building"></i> Units</a></li>
+         <li><a href="list-users" class="{{ request()->is('list-users') ? 'nav-link active' : 'nav-link' }}"><i
+                     class="fa-solid fa-user"></i> Users</a></li>
       </div>
-      <div>
+      <div class="w-full">
          <x-dropdown-profile></x-dropdown-profile>
       </div>
    </ul>
