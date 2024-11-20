@@ -2,12 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UnitController;
 
 Route::get('/', function () {
     return view('auth/login');
 });
 
-use App\Http\Controllers\UserController;
  
 Route::view('/welcome', 'welcome');
 Route::get('/dashboard', function () {
@@ -18,12 +18,16 @@ Route::get('/list-bookings', function () {
     return view('list-bookings');
 });
 
-Route::get('/list-units', function () {
-    return view('list-units');
-});
+Route::get('/list-units',[UnitController::class,'index'])->name('units.index');
 
 Route::get('/list-users', function () {
     return view('list-users');
+});
+
+Route::post('/properties', [UnitController::class, 'store'])->name('units.store');
+
+Route::get('/input-units', function () {
+    return view('input-units');
 });
 
 
