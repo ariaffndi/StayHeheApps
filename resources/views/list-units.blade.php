@@ -14,7 +14,7 @@
             <hr class="mt-4">
       </div>
       <div class="mt-4 flex flex-wrap gap-4 items-center justify-center">
-            <x-table-units></x-table-units>
+            <x-table-units :units="$units"></x-table-units>
       </div>
       </div>
 

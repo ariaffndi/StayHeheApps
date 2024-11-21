@@ -10,11 +10,11 @@ class UnitController extends Controller
     
     public function index()
     {
-        $units = Unit::latest();
+        $units = Unit::latest()->get();
         return view('list-units', compact('units')); 
     }
     
-   
+
     public function create()
     {
         return view('units.create');

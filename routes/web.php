@@ -18,7 +18,7 @@ Route::get('/list-bookings', function () {
     return view('list-bookings');
 });
 
-Route::get('/list-units',[UnitController::class,'index'])->name('units.index');
+Route::get('/list-units', [UnitController::class, 'index'])->name('units.index');
 
 Route::get('/list-users', function () {
     return view('list-users');
