@@ -1,6 +1,9 @@
-<div class="overflow-x-auto w-full">
+@props(['units'])
 
-    <button class="btn btn-sm btn-info"><i class="fa-solid fa-plus"></i> Tambah Data</button>
+<div class="overflow-x-auto w-full">
+    <a href="input-units" class="{{ request()->is('input-units') }} btn btn-info">
+        <i class="fa-solid fa-plus"></i> Tambah Data
+    </a>
 
     <table class="table">
         <!-- head -->
@@ -19,38 +22,31 @@
             </tr>
         </thead>
         <tbody>
-            <!-- row 1 -->
-            <tr class="bg-base-200 text-center">
-                <th>1</th>
-                <td>Unt01</td>
-                <td>Tavia Hotel & Vila</td>
-                <td>Batu</td>
-                <td>East Java</td>
-                <td>3000000</td>
-                <td>7</td>
-                <td>500</td>
-                <td>1000</td>
-                <td>
-                    <a href="" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <button href="" class="btn btn-sm btn-error" onclick="modalConfirmDelete.showModal()"><i class="fa-solid fa-trash"></i><button>
-                </td>
-            </tr>
-            <!-- row 2 -->
-            <tr class="bg-base-200 text-center">
-                <th>1</th>
-                <td>Unt01</td>
-                <td>Tavia Hotel & Vila</td>
-                <td>Batu</td>
-                <td>East Java</td>
-                <td>3000000</td>
-                <td>7</td>
-                <td>500</td>
-                <td>1000</td>
-                <td>
-                    <a href="" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-                    <button href="" class="btn btn-sm btn-error" onclick="modalConfirmDelete.showModal()"><i class="fa-solid fa-trash"></i><button>
-                </td>
-            </tr>
+            @foreach ($units as $unit)
+                <tr class="bg-base-200 text-center">
+                    <th>{{ $loop->iteration }}</th>
+                    <td>{{ $unit->unit_id }}</td>
+                    <td>{{ $unit->name }}</td>
+                    <td>{{ $unit->kabupaten }}</td>
+                    <td>{{ $unit->provinsi }}</td>
+                    <td>{{ number_format($unit->harga, 0, ',', '.') }}</td>
+                    <td>{{ $unit->jumlah_kamar }}</td>
+                    <td>{{ $unit->luas_bangunan }}</td>
+                    <td>{{ $unit->luas_lahan }}</td>
+                    <td>
+                        <a href="" class="btn btn-sm btn-warning">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <form action="" method="" style="display: inline;">
+                            @csrf
+                            @method('')
+                            <button class="btn btn-sm btn-error" type="submit">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
