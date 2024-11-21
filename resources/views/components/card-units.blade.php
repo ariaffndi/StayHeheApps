@@ -1,5 +1,5 @@
 <a href="">
-    <div class="card bg-base-100 image-full w-80 shadow-xl">
+    <div class="card bg-base-100 image-full w-72 shadow-xl">
         <figure>
             <img src="../img/card-image-3.jpg" alt="" />
         </figure>
