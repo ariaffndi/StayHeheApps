@@ -12,7 +12,7 @@
                 <hr class="mt-4">
             </div>
             <div class="mt-4 flex flex-wrap gap-4 items-center justify-center">
-                <x-table-users></x-table-users>
+                <x-table-users :members='$members'></x-table-users>
             </div>
         </div>
 

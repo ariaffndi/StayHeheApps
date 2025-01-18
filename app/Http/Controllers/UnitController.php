@@ -10,14 +10,14 @@ class UnitController extends Controller
 
     public function index()
     {
-        $units = Unit::latest()->get();
-        return view('list-units', compact('units'));
+        $units = Unit::paginate(8);
+        return view('unit.list-units', compact('units'));
     }
 
 
     public function create()
     {
-        return view('input-units');
+        return view('unit.input-units');
     }
 
 
@@ -45,7 +45,7 @@ class UnitController extends Controller
 
     public function edit(Unit $unit)
     {
-        return view('update-units', compact('unit'));
+        return view('unit.update-units', compact('unit'));
     }
 
 
