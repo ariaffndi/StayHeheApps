@@ -7,20 +7,20 @@ use App\Models\Unit;
 
 class UnitController extends Controller
 {
-    
+
     public function index()
     {
-        $units = Unit::latest()->get();
-        return view('list-units', compact('units')); 
+        $units = Unit::paginate(8);
+        return view('unit.list-units', compact('units'));
     }
-    
+
 
     public function create()
     {
-        return view('units.create');
+        return view('unit.input-units');
     }
 
-  
+
     public function store(Request $request)
     {
         $request->validate([
@@ -37,26 +37,22 @@ class UnitController extends Controller
         Unit::create($request->all());
 
         return redirect()->route('units.index')
-                         ->with('success', 'Properti berhasil ditambahkan.');
+            ->with('success', 'Properti berhasil ditambahkan.');
     }
 
-  
-    public function show(Unit $property)
+
+
+
+    public function edit(Unit $unit)
     {
-        return view('units.show', compact('property'));
+        return view('unit.update-units', compact('unit'));
     }
 
 
-    public function edit(Unit $property)
-    {
-        return view('units.edit', compact('property'));
-    }
-
-   
-    public function update(Request $request, Unit $property)
+    public function update(Request $request, Unit $unit)
     {
         $request->validate([
-            'unit_id' => 'required|unique:units,unit_id,' . $property->id,
+            'unit_id' => 'required|unique:units,unit_id,' . $unit->id,
             'name' => 'required',
             'kabupaten' => 'required',
             'provinsi' => 'required',
@@ -66,18 +62,18 @@ class UnitController extends Controller
             'luas_lahan' => 'required|integer',
         ]);
 
-        $property->update($request->all());
+        $unit->update($request->all());
 
         return redirect()->route('units.index')
-                         ->with('success', 'Properti berhasil diperbarui.');
+            ->with('success', 'Properti berhasil diperbarui.');
     }
 
-   
-    public function destroy(Unit $property)
+
+    public function destroy(Unit $unit)
     {
-        $property->delete();
+        $unit->delete();
 
         return redirect()->route('units.index')
-                         ->with('success', 'Properti berhasil dihapus.');
+            ->with('success', 'Properti berhasil dihapus.');
     }
 }

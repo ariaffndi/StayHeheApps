@@ -1,7 +1,7 @@
 @props(['units'])
 
 <div class="overflow-x-auto w-full">
-    <a href="input-units" class="{{ request()->is('input-units') }} btn btn-info">
+    <a href="{{ route('units.create') }}" class=" btn btn-info">
         <i class="fa-solid fa-plus"></i> Tambah Data
     </a>
 
@@ -34,13 +34,16 @@
                     <td>{{ $unit->luas_bangunan }}</td>
                     <td>{{ $unit->luas_lahan }}</td>
                     <td>
-                        <a href="" class="btn btn-sm btn-warning">
+                        <!-- Tombol Edit -->
+                        <a href="{{ route('units.edit', $unit->id) }}" class="btn btn-sm btn-warning">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
-                        <form action="" method="" style="display: inline;">
+                        <!-- Form Hapus -->
+                        <form action="{{ route('units.destroy', $unit->id) }}" method="POST" style="display: inline;">
                             @csrf
-                            @method('')
-                            <button class="btn btn-sm btn-error" type="submit">
+                            @method('DELETE')
+                            <button class="btn btn-sm btn-error" type="submit"
+                                onclick="return confirm('Yakin ingin menghapus data ini?')">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </form>
