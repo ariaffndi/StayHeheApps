@@ -28,6 +28,7 @@ class MemberController extends Controller
             'alamat' => 'required',
             'umur' => 'required|integer',
             'gender' => 'required',
+            'no_telp' => 'required',
         ]);
 
         member::create($request->all());
@@ -53,6 +54,7 @@ class MemberController extends Controller
             'alamat' => 'required',
             'umur' => 'required|integer',
             'gender' => 'required',
+            'no_telp' => 'required',
         ]);
 
 

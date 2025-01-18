@@ -1,5 +1,4 @@
 <x-layout>
-    <x-modal-confirm-delete></x-modal-confirm-delete>
     <div class="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col p-5">

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('name');
             $table->string('alamat');
             $table->string('umur');
-            $table->string('no_tlp');
             $table->string('gender');
             $table->timestamps();
         });

@@ -14,5 +14,6 @@ class member extends Model
         'alamat',
         'umur',
         'gender',
+        'no_telp',
     ];
 }

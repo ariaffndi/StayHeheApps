@@ -1,7 +1,6 @@
-@props(['units'])
-
+@props(['members'])
 <div class="overflow-x-auto w-full">
-    <a href="{{ route('units.create') }}" class=" btn btn-info">
+    <a href="#" class=" btn btn-info">
         <i class="fa-solid fa-plus"></i> Tambah Data
     </a>
 
@@ -10,36 +9,33 @@
         <thead>
             <tr class="text-center">
                 <th>No</th>
-                <th>Unit ID</th>
-                <th>Nama</th>
-                <th>Kabupaten</th>
-                <th>Provinsi</th>
-                <th>Harga</th>
-                <th>Jumlah Kamar</th>
-                <th>Luas Bangunan</th>
-                <th>Luas Lahan</th>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Telp</th>
+                <th>Address</th>
+                <th>Gender</th>
+                <th>Usia</th>
                 <th colspan="">Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($units as $unit)
+            @foreach ($members as $member)
                 <tr class="bg-base-200 text-center">
                     <th>{{ $loop->iteration }}</th>
-                    <td>{{ $unit->unit_id }}</td>
-                    <td>{{ $unit->name }}</td>
-                    <td>{{ $unit->kabupaten }}</td>
-                    <td>{{ $unit->provinsi }}</td>
-                    <td>{{ number_format($unit->harga, 0, ',', '.') }}</td>
-                    <td>{{ $unit->jumlah_kamar }}</td>
-                    <td>{{ $unit->luas_bangunan }}</td>
-                    <td>{{ $unit->luas_lahan }}</td>
+                    <td>{{ $member->member_id }}</td>
+                    <td>{{ $member->name }}</td>
+                    <td>{{ $member->email }}</td>
+                    <td>{{ $member->no_telp }}</td>
+                    <td>{{ $member->alamat }}</td>
+                    <td>{{ $member->gender }}</td>
+                    <td>{{ $member->usia }}</td>
                     <td>
-                        <!-- Tombol Edit -->
-                        <a href="{{ route('units.edit', $unit->id) }}" class="btn btn-sm btn-warning">
+                        <a href="#" class="btn btn-sm btn-warning">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
                         <button class="btn btn-sm btn-error" type="button"
-                            data-url="{{ route('units.destroy', $unit->id) }}"
+                            data-url=""
                             onclick="showDeleteModal(this)">
                             <i class="fa-solid fa-trash"></i>
                         </button>
