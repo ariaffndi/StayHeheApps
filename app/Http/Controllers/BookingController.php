@@ -51,6 +51,13 @@ class BookingController extends Controller
         return redirect()->route('bookings.index')->with('success', 'Booking berhasil ditambahkan.');
     }
 
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -90,4 +97,13 @@ class BookingController extends Controller
 
         return redirect()->route('bookings.index')->with('success', 'Booking berhasil dihapus.');
     }
+
+
+    public function complete(Booking $booking)
+    {
+        $booking->update(['status' => 'completed']);
+
+        return redirect()->route('bookings.index')->with('success', 'Booking berhasil diperbarui.');
+    }
+
 }

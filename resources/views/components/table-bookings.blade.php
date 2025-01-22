@@ -30,18 +30,15 @@
                     <td>{{ $booking->end_date }}</td>
                     <td>{{ $booking->status }}</td>
                     <td>
-                        <!-- Tombol Edit -->
                         <a href="{{ route('bookings.edit', $booking->id) }}" class="btn btn-sm btn-warning">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
                         <button class="btn btn-sm btn-success" type="button"
-                            data-url="{{ route('bookings.destroy', $booking->id) }}"
-                            onclick="showDeleteModal(this)">
+                            data-url="{{ route('bookings.complete', $booking->id) }}" onclick="showCompleteModal(this)">
                             <i class="fa-solid fa-check"></i>
                         </button>
                         <button class="btn btn-sm btn-error" type="button"
-                            data-url="{{ route('bookings.destroy', $booking->id) }}"
-                            onclick="showDeleteModal(this)">
+                            data-url="{{ route('bookings.destroy', $booking->id) }}" onclick="showDeleteModal(this)">
                             <i class="fa-solid fa-trash"></i>
                         </button>
                     </td>
@@ -52,7 +49,23 @@
 </div>
 
 
-<!-- Modal -->
+<!-- Modal Complete -->
+<dialog id="modalConfirmComplete" class="modal">
+    <div class="modal-box">
+        <h3 class="text-lg font-bold">Alert!</h3>
+        <p class="py-4">Yakin ingin menyelesaikan?</p>
+        <div class="modal-action">
+            <form method="POST">
+                @csrf
+                @method('PATCH')
+                <button type="submit" class="btn btn-success">Selesai</button>
+                <button type="button" class="btn" onclick="modalConfirmDelete.close()">Cancel</button>
+            </form>
+        </div>
+    </div>
+</dialog>
+
+<!-- Modal Delete -->
 <dialog id="modalConfirmDelete" class="modal">
     <div class="modal-box">
         <h3 class="text-lg font-bold">Alert!</h3>
@@ -71,11 +84,19 @@
 <!-- JavaScript -->
 <script>
     const modalConfirmDelete = document.getElementById('modalConfirmDelete');
+    const modalConfirmComplete = document.getElementById('modalConfirmComplete');
     const deleteForm = modalConfirmDelete.querySelector('form');
+    const completeForm = modalConfirmComplete.querySelector('form');
 
     function showDeleteModal(button) {
         const url = button.getAttribute('data-url'); // Ambil URL dari tombol
         deleteForm.action = url; // Set URL ke action form
         modalConfirmDelete.showModal(); // Tampilkan modal
+    }
+
+    function showCompleteModal(button) {
+        const url = button.getAttribute('data-url'); // Ambil URL dari tombol
+        completeForm.action = url; // Set URL ke action form
+        modalConfirmComplete.showModal(); // Tampilkan modal
     }
 </script>

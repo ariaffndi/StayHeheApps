@@ -8,7 +8,7 @@
         <div class="card-body">
             <h1 class="card-title text-3xl">{{ $slot }}</h1>
             <h1 class="mt-4" style="font-size: 10rem">{{ $totalBookings }}</h1>
-            <h1 class="mt-4">Pending Bookings</h1>
+            <h1 class="mt-4">Total Bookings</h1>
         </div>
     </div>
 </a>

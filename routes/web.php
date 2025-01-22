@@ -49,6 +49,8 @@ Route::middleware('auth')->group(function () {
 
     Route::delete('/bookings/{booking}', [BookingController::class, 'destroy'])->name('bookings.destroy');
 
+    Route::patch('/bookings/{booking}/complete', [BookingController::class, 'complete'])->name('bookings.complete');
+
 });
 // route profile
 Route::middleware('auth')->group(function () {

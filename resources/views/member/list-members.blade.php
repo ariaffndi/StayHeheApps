@@ -7,7 +7,7 @@
                 <i class="fa-solid fa-bars"></i>
             </label>
             <div>
-                <h1 class="text-3xl font-bold">Users Registered</h1>
+                <h1 class="text-3xl font-bold">Members Registered</h1>
                 <hr class="mt-4">
             </div>
             <div class="mt-4 flex flex-wrap gap-4 items-center justify-center">
