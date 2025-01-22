@@ -12,12 +12,10 @@
 
             <!-- Page content here -->
             <div>
-                <h1 class="text-3xl font-bold">Update Unit</h1>
+                <h1 class="text-3xl font-bold">Tambah Booking</h1>
                 <hr class="mt-4">
-                <x-form-update-members :member="$member" />
+                <x-form-bookings :units="$units" :members="$members"></x-form-bookings>
             </div>
         </div>
-        <!-- Sidebar -->
-        <x-sidebar></x-sidebar>
     </div>
 </x-layout>

@@ -3,11 +3,6 @@
     @method('PATCH')
 
     <div class="form-control">
-        <label class="label">Unit ID</label>
-        <input type="text" name="unit_id" class="input input-bordered" value="{{ $unit->unit_id }}" required>
-    </div>
-
-    <div class="form-control">
         <label class="label">Nama</label>
         <input type="text" name="name" class="input input-bordered" value="{{ $unit->name }}" required>
     </div>

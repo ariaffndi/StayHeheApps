@@ -14,7 +14,7 @@
             <div>
                 <h1 class="text-3xl font-bold">Update Unit</h1>
                 <hr class="mt-4">
-                <x-form-update-members :member="$member" />
+                <x-form-update-bookings :booking="$booking" :units="$units" :members="$members"/>
             </div>
         </div>
         <!-- Sidebar -->

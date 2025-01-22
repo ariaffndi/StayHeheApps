@@ -52,7 +52,6 @@ class UnitController extends Controller
     public function update(Request $request, Unit $unit)
     {
         $request->validate([
-            'unit_id' => 'required|unique:units,unit_id,' . $unit->id,
             'name' => 'required',
             'kabupaten' => 'required',
             'provinsi' => 'required',

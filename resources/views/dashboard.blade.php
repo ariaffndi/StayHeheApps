@@ -11,7 +11,7 @@
             <hr class="mt-4">
             </div>
             <div class="overflow-x-auto w-full mt-4">
-                  <x-list-card-dashboard></x-list-card-dashboard>
+                  <x-list-card-dashboard :totalUnits="$totalUnits" :totalMembers="$totalMembers" :totalBookings="$totalBookings"></x-list-card-dashboard>
             </div>
       </div>
 

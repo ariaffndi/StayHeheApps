@@ -49,7 +49,6 @@ class MemberController extends Controller
     public function update(Request $request, member $member)
     {
         $request->validate([
-            'member_id' => 'required|unique:members,member_id,' . $member->id,
             'name' => 'required',
             'alamat' => 'required',
             'umur' => 'required|integer',

@@ -7,12 +7,12 @@
             <li><a href="{{ route('dashboard') }}"
                     class="{{ request()->is('dashboard') ? 'nav-link active' : 'nav-link' }} text-xl"><i
                         class="fa-solid fa-house "></i> Dashboard</a></li>
-            <li><a href="list-bookings" class="{{ request()->is('list-bookings') ? 'nav-link active' : 'nav-link' }}"><i
+            <li><a href="{{ route('bookings.index') }}" class="{{ request()->is('list-bookings') ? 'nav-link active' : 'nav-link' }}"><i
                         class="fa-solid fa-calendar-days "></i> Bookings</a></li>
             <li><a href="{{ route('units.index') }}"
                     class="{{ request()->is('list-units') ? 'nav-link active' : 'nav-link' }}"><i
                         class="fa-solid fa-building"></i> Units</a></li>
-            <li><a href="{{ route('member.index') }}"
+            <li><a href="{{ route('members.index') }}"
                     class="{{ request()->is('list-members') ? 'nav-link active' : 'nav-link' }}"><i
                         class="fa-solid fa-user"></i> Members</a></li>
         </div>

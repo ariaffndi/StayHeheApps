@@ -1,5 +1,4 @@
 <x-layout>
-    <x-modal-confirm-delete></x-modal-confirm-delete>
     <div class="drawer lg:drawer-open">
         <x-sidebar></x-sidebar>
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
@@ -13,7 +12,7 @@
                 <hr class="mt-4">
             </div>
             <div class="mt-4 flex flex-wrap gap-4 items-center justify-center">
-                <x-table-bookings></x-table-bookings>
+                <x-table-bookings :bookings="$bookings"></x-table-bookings>
             </div>
         </div>
 
